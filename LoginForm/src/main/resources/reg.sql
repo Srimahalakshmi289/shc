@@ -1,0 +1,1 @@
+insert into patient_registration (p_id,p_name,p_email,p_dob,p_phonenum,p_city,p_gender,p_city,password,p_role) values (1,'Maha','lakshmi','maha@gmail.com','9876543212','Neyveli','Female','maha@876','patient');
