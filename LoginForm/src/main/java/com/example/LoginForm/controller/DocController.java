@@ -13,6 +13,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -32,7 +33,6 @@ public class DocController {
 
 	@GetMapping("/images/{apid}")
 	public String get(Model model, @PathVariable int apid) {
-//		List<Doc> docs = docStorageService.getFiles();
 		String id = Integer.toString(apid);
 		List<Doc> docs = docRepository.findByApid(id);
 		model.addAttribute("docs", docs);
@@ -58,6 +58,16 @@ public class DocController {
 				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment:filename=\"" + doc.getDocName() + "\"")
 				.body(new ByteArrayResource(doc.getData()));
 	}
+	
+	@RequestMapping("/download/{apid}")
+	public String downReports(@PathVariable(value = "apid") int apid, ModelMap map) {
+		String id = Integer.toString(apid);
+		List<Doc> docs = docRepository.findByApid(id);
+		map.put("docs", docs);
+		System.out.println(docs);
+		return "thymeleaf/upload";
+	}
+
 
 	
 }

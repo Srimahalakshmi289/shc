@@ -1,11 +1,14 @@
 package com.example.LoginForm.domain;
 
+import java.sql.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
 @Entity
@@ -27,7 +30,7 @@ public class Prescription {
 	private int ana;
 	private int ntb;
 	private int nta;
-	private String date;
+	private Date date;
 	private String name;
 
 	public Prescription() {
@@ -36,7 +39,7 @@ public class Prescription {
 	}
 
 	public Prescription(int preid, String medicines, int pid, int did, int aid, int fnb, int fna, int anb, int ana,
-			int ntb, int nta, String date, String name) {
+			int ntb, int nta, Date date, String name) {
 		super();
 		this.preid = preid;
 		this.medicines = medicines;
@@ -141,11 +144,11 @@ public class Prescription {
 		this.nta = nta;
 	}
 
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 
@@ -163,5 +166,6 @@ public class Prescription {
 				+ aid + ", fnb=" + fnb + ", fna=" + fna + ", anb=" + anb + ", ana=" + ana + ", ntb=" + ntb + ", nta="
 				+ nta + ", date=" + date + ", name=" + name + "]";
 	}
+
 
 }

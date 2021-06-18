@@ -24,7 +24,7 @@
                 </tr>
                 <tr>
                     <td>Email: </td>
-                    <td><form:input path="d_email" /></td>
+                    <td><form:input path="dEmail" /></td>
                 </tr>
                 <tr>
                     <td>Address: </td>

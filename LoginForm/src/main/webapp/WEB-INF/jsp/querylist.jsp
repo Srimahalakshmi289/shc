@@ -47,7 +47,7 @@ strong {
   width: 100%;
   height: 100vh;
   background: #fdfdfd;
-  font-family:cursive; 
+  font-family:sans-serif; 
   font-weight: 600;
   letter-spacing: .06em;
   color: #212121;
@@ -363,11 +363,11 @@ function logout(){
     </div>
     <div id="nav-content" tabindex="0">
       <ul>
-        <li><a href="adminHome">Home</a></li>
-        <li><a href="add_doctors">Add doctor</a></li>
-        <li><a href="doctor_list">Doctor list</a></li>
-        <li><a href="querylist">Query list</a></li>
-        <li><a href="home">Logout</a></li>
+        <li><a href="/adminHome">Home</a></li>
+        <li><a href="/add_doctors">Add doctor</a></li>
+        <li><a href="/doctor_list">Doctor list</a></li>
+        <li><a href="/querylist">Query list</a></li>
+        <li><a href="/home">Logout</a></li>
         
       </ul>
     </div>

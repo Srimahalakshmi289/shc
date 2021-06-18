@@ -80,9 +80,14 @@ public class ViewController {
 	public String adminHome() {
 		return "adminHome";
 	}
-	@RequestMapping("home")
+	@RequestMapping("/home")
 	public String homePage() {
 		return "home";
 	}
-	
+	/*
+	 * @RequestMapping("/doc") public String docUpload() { return "thymeleaf/doc"; }
+	 * 
+	 * @RequestMapping("/appointmentHistoryPat") public String appointment() {
+	 * return "appointmentHistoryPat"; }
+	 */
 }

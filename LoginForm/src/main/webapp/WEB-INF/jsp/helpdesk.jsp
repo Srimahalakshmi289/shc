@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 <title>admin</title>
@@ -10,6 +8,11 @@
             color:black;
             padding: 15px;
             
+        }
+        h2{
+        	margin-left: 350px;
+        	margin-top: 30px;
+        	margin-bottom: 35px;
         }
          h1{
          	margin:330px;
@@ -27,7 +30,7 @@
 		}
 		
 		body{
-			background: url(/resources/images/helpdesk.jpg);
+			background: url(/resources/images/help.jpeg);
 			background-size: cover;
 		}
 		header{
@@ -54,8 +57,8 @@
 		
 	</div>
 	<div class="row">
-		<div class="col-md-3"></div>
-		<div class="col-md-6">
+		<div class="col-md-2"></div>
+		<div class="col-md-4">
 			<div class="login_container">
 			<div>
 			
@@ -80,7 +83,7 @@
   </div>
   <div style="text-align: center;">
  
-  <button type="submit" class="btn btn-primary" onclick="submit()">Submit</button>
+  <button type="submit" class="btn btn-primary" value="submit" onclick="submit()">Submit</button>
   </div>
 </div>
 			</div>

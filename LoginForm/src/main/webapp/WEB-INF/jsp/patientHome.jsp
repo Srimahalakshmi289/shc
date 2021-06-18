@@ -21,8 +21,8 @@ strong {
 .page {
   width: 100%;
   height: 100vh;
-  background: url(resources/images/medical.jpg);
-  background-size: 1800px 900px;
+  background: url(resources/images/mountain.jpg);
+  background-size: cover;
   background-repeat:no-repeat;
   font-family: 'Montserrat', sans-serif; 
   font-weight: 600;
@@ -218,10 +218,14 @@ a {
   transition: .2s ease-in-out;
 }
 
-h1, h2, h3, h4 {
+ h2, h3, h4 {
   margin: 0;
 }
-
+h1{
+padding-top:150px;
+padding-left:700px;
+font-family: serif;
+}
 ul {
   padding: 0;
   list-style: none;
@@ -241,11 +245,11 @@ ul {
     </div>
     <div id="nav-content" tabindex="0">
       <ul>
-        <li><a href="patientHome">Home</a></li>
-        <li><a href="pat_prof">Patient profile</a></li>
+        <li><a href="/patientHome">Home</a></li>
+        <li><a href="/pat_prof">Patient profile</a></li>
         <li><a href="/appointmentHistoryPat/${pat.p_id}">Medication history</a></li>
-        <li><a href="patient_make_appt">Appointment booking</a></li>
-        <li><a href="home">Logout</a></li>
+        <li><a href="/patient_make_appt">Appointment booking</a></li>
+        <li><a href="/home">Logout</a></li>
         
       </ul>
     </div>
@@ -253,7 +257,7 @@ ul {
 
   <main>
 
-  <h1 class="page_title">Welcome ${pEmail} !!!</h1> 
+  <h1>Welcome ${pat.p_name} !!!</h1> 
 
   </main>
 </div>

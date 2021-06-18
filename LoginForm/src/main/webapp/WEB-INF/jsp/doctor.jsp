@@ -10,7 +10,8 @@
 .table {
 	font-size: 1.5em;
 	padding-top: 200px;
-	padding-left: 900px;
+	padding-left: 800px;
+	font-family: 'Montserrat', serif;
 }
 
 .head h2 {
@@ -34,7 +35,7 @@ strong {
 .page {
 	width: 100%;
 	height: 100vh;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Montserrat',sans-serif;
 	font-weight: 600;
 	letter-spacing: .06em;
 	color: #212121;
@@ -252,64 +253,6 @@ ul {
 	}
 </script>
 <body>
-	<%-- <header>
-    <div id ="header-container">
-    <nav>
-        <a href="/doctor">Home </a>  
-        <a href="/search_patient">Patient Search</a> 
-        <a href="/doc_appt_requests">My Appointments</a>  
-        <div  style="text-align: right;margin-top:-38; "  id="header-container">
-   <button type="submit" class="btn " onclick="logout()">LOGOUT</button>
-         </div><br>
-
-    </nav>
-    </div>
-    </header>
-	
-	<% 
-	String EmailId=request.getParameter("email");
-	try{
-		Class.forName("com.mysql.jdbc.Driver");
-		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/smarthealthcare","root","root");
-		if(!con.isClosed()){
-			PreparedStatement ps=con.prepareStatement("select * from doctor_registration where d_email='"+EmailId+"'");
-			ResultSet rs=ps.executeQuery();
-			if(rs.next()){
-		%>
-		
-		
-		<div class="head">
-
-		
-		<div>
-			<h1>Welcome.. <%=rs.getString("d_name") %></h1>
-		</div>
-
-		
-		<div class="table">
-		<table>
-		<thead><h2>Personal Details</h2></thead>
-
-				<tr><td><b>Name :</b></td><td><%=rs.getString("d_name") %></td></tr>
-				<tr><td><b>BloodGroup :</b></td><td><%=rs.getString("d_bg") %></td></tr>
-				<tr><td><b>Email Id:</b></td><td><%=rs.getString("d_email") %></td></tr>
-				<tr><td><b>Address :</b></td><td><%=rs.getString("d_city") %></td></tr>
-				<tr><td><b>Phone number :</b></td><td><%=rs.getString("d_phonenum") %></td></tr>
-				<tr><td><b>Dob :</b></td><td><%=rs.getString("d_dob") %></td></tr>
-				<tr><td><b>Gender :</b></td><td><%=rs.getString("d_gender") %></td></tr>
-				<tr><td><b>Department :</b></td><td><%=rs.getString("department") %></td></tr>
-				<tr><td><b>Password :</b></td><td><%=rs.getString("password") %></td></tr>
-		</table>
-		</div>
-		<%
-			}
-			
-		}
-	}
-	catch(Exception e){
-		out.println("The error is: "+e.getMessage());
-	}%>
-</div> --%>
 
 	<div class="page">
 		<header tabindex="0">
@@ -322,17 +265,18 @@ ul {
 					class="icon-bar"></span>
 			</div>
 			<div id="nav-content" tabindex="0">
-				<ul>
-					<li><a href="doctorHome">Home</a></li>
-					<li><a href="doctor">Doctor profile</a></li>
-					<li><a href="search_patient">Search patient</a></li>
-					<li><a href="appReq/${doc.d_id} ">Appointment list</a></li>
-					<li><a href="doc_appt_requests/${doc.d_id} ">Appointment History</a></li>
-
-					<li><a href="home">Logout</a></li>
-
-				</ul>
-			</div>
+      <ul>
+        <li><a href="/doctorHome">Home</a></li>
+        <li><a href="/doctor">Doctor profile</a></li>
+        <li><a href="/search_patient">Search patient</a></li>
+         <li><a href="/appReq/${doc.d_id}">Appointment list</a></li>
+         <li><a href="/doc_appt_requests/${doc.d_id} ">Appointment History</a></li>
+        <li><a href="/home">Logout</a></li>
+        
+      </ul>
+      
+      
+    </div>
 		</div>
 		<div>
 

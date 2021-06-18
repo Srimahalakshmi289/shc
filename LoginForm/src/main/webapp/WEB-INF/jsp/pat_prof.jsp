@@ -3,11 +3,13 @@
     
 <!DOCTYPE html>
 <html>
+<title>patient</title>
 <style>
 .table{
 font-size: 1.5em;
-padding-top: 220px;
-padding-left: 570px;
+padding-top: 180px;
+padding-left: 500px;
+font-family: serif;
 
 }
          .head h2{
@@ -27,6 +29,8 @@ strong {
 .btn{
 width:60px;
 height: 30px;
+margin-left:150px;
+margin-top:10px;
 }
 .page {
   width: 100%;
@@ -35,7 +39,8 @@ height: 30px;
   font-weight: 600;
   letter-spacing: .06em;
   color: #212121;
-  background: #383838 url(https://www.athenadesignstudio.com/plugins/switch/images/bg.jpg) no-repeat center center;
+  background: url(resources/images/bg.jpg);
+  background-size: cover;
 }
 
 
@@ -249,7 +254,6 @@ function logout(){
 </script>
 <body>
 
-<header>
 
  
  <div class="page">
@@ -263,11 +267,11 @@ function logout(){
     </div>
     <div id="nav-content" tabindex="0">
       <ul>
-        <li><a href="patientHome">Home</a></li>
-        <li><a href="pat_prof">Patient profile</a></li>
-        <li><a href="patient_history">Medication history</a></li>
-        <li><a href="patient_make_appt">Appointment booking</a></li>
-        <li><a href="home">Logout</a></li>
+        <li><a href="/patientHome">Home</a></li>
+        <li><a href="/pat_prof">Patient profile</a></li>
+        <li><a href="/appointmentHistoryPat/${pat.p_id}">Medication history</a></li>
+        <li><a href="/patient_make_appt">Appointment booking</a></li>
+        <li><a href="/home">Logout</a></li>
         
       </ul>
     </div>
@@ -288,7 +292,7 @@ function logout(){
 				<tr><td><b>Gender :</b></td><td>${pat.p_gender}</td></tr>
 				
 		</table>
-		<button  class="btn" value="Edit" ><a  href="/editpat/${pat.p_id}">Edit</a></button>
+		<button  class="btn"  value="Edit" ><a  href="/editpat/${pat.p_id}">Edit</a></button>
 </div>
 </div>
 

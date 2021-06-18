@@ -25,12 +25,11 @@ strong {
 .page {
   width: 100%;
   height: 100vh;
-  font-family:sans-serif; 
-  font: 1em Hind, sans-serif;
+ font-family: 'Montserrat',sans-serif;
   font-weight: 600;
   letter-spacing: .06em;
   color: #212121;
-  background: url(resources/images/medical.jpg);
+  background-image: url(/resources/images/five.jpg);
   background-size: 1800px 900px;
   background-repeat:no-repeat;
 }
@@ -239,17 +238,14 @@ ul {
 		button.def{
 		background-color:#f54251;
 		}
-		.table-wrapper{
-    margin: 10px 70px 70px;
-    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
-}
 		.fl-table {
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: normal;
     border: none;
     border-collapse: collapse;
-    width: 100%;
+    width: 70%;
+
     white-space: nowrap;
     background-color: white;
 }
@@ -292,7 +288,7 @@ ul {
         text-align: right;
        
         color: white;
-        padding: 0 0 10px;
+        padding-top:100px ;
     }
     .fl-table thead, .fl-table tbody, .fl-table thead th {
         display: block;
@@ -344,7 +340,12 @@ ul {
         text-align: center;
     }
 	
-	
+
+.table thead, .table tbody, .table thead th {
+        display: block;
+    }
+    
+ 
     </style>
 </head>
  <script type="text/javascript">
@@ -367,22 +368,25 @@ function logout(){
     </div>
     <div id="nav-content" tabindex="0">
       <ul>
-        <li><a href="doctorHome">Home</a></li>
-        <li><a href="doctor">Doctor profile</a></li>
-        <li><a href="search_patient">Search patient</a></li>
-        <li><a href="doc_appt_requests">Appointment list</a></li>
-        <li><a href="home">Logout</a></li>
+        <li><a href="/doctorHome">Home</a></li>
+        <li><a href="/doctor">Doctor profile</a></li>
+        <li><a href="/search_patient">Search patient</a></li>
+         <li><a href="/appReq/${doc.d_id}">Appointment list</a></li>
+         <li><a href="/doc_appt_requests/${doc.d_id} ">Appointment History</a></li>
+        <li><a href="/home">Logout</a></li>
         
       </ul>
+      
+      
     </div>
   </div>
     
 <h2 align="center"><font><strong>Appointment Requests</strong></font></h2>
 <div class="table-wrapper">
-<table class="fl-table">
 
-<div align="center">
-		<table border=1px>
+<div class="tab" align="center" >
+		<div class="table-wrapper">
+		<table class="fl-table">
 			<thead>
 				<tr>
 					<th>Appointment Id</th>
@@ -390,8 +394,6 @@ function logout(){
 					<th>patient Name</th>
 					<th>Patient Email</th>
 					<th>Patient Phone</th>
-			<!-- 		<th>patient Age</th>
-					<th>Issue Description</th> -->
 					<th>Reports</th>
 					<th>Prescribe</th>
 					<th>Prescription History</th>
@@ -405,9 +407,7 @@ function logout(){
 						<td>${app.a_name}</td>
 						<td>${app.a_email}</td>
 						<td>${app.a_phonenum}</td>
-				<%-- 		<td>${app.age}</td>
-						<td>${app.description}</td> --%>
-						<td>Download reports</td>
+						<td><a href="/download/${app.a_id}">Download reports</a></td>
 						<td><a href="/prescribe/${app.a_id}">Prescribe</a></td>
 						<td>
 							<a href="/presHist/${app.a_id}">Prescription History</a>
@@ -418,6 +418,9 @@ function logout(){
 				</c:forEach>
 			</tbody>
 		</table>
+	</div>
+
+	</div>
 	</div>
 
 </body>

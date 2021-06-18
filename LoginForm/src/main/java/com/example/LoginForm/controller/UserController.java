@@ -37,7 +37,8 @@ public class UserController {
 		User fromDB = userservice.getByEmail(user.getEmail());
 		if ((fromDB.getPassword().equals(user.getPassword())) && (fromDB.getRole().equals(user.getRole()))) {
 			if (user.getRole().equals("patient")) {
-				
+				//session.setAttribute("pId", patientRepository.findByEmail(fromDB.getEmail()).getId());
+				//session.setAttribute("pEmail", patientRepository.findByEmail(fromDB.getEmail()).getEmail());
 				Patient pat = patrepo.findBypEmail(user.getEmail());
 //				System.out.println(pat);
 				session.setAttribute("pat", pat);

@@ -24,7 +24,7 @@ strong {
 .page {
   width: 100%;
   height: 100vh;
-  font-family:sans-serif; 
+  font-family: 'Montserrat',sans-serif;
   font-weight: 600;
   letter-spacing: .06em;
   color: #212121;
@@ -222,7 +222,7 @@ img {
   width: 100%;
 }
 .patient{
-margin-top:350px;
+margin-top:320px;
 margin-left: 300px;
 
 }
@@ -235,9 +235,7 @@ margin-left: 300px;
 :root {
 	font-size: calc(16px + (24 - 16)*(100vw - 320px)/(1920 - 320));
 }
-body, button, input {
-	font: 1em Hind, sans-serif;
-}
+
 
 
 body, .search-bar {
@@ -389,13 +387,16 @@ body {
     </div>
     <div id="nav-content" tabindex="0">
       <ul>
-        <li><a href="doctorHome">Home</a></li>
-        <li><a href="doctor">Doctor profile</a></li>
-        <li><a href="search_patient">Search patient</a></li>
-        <li><a href="doc_appt_requests">Appointment list</a></li>
-        <li><a href="home">Logout</a></li>
+        <li><a href="/doctorHome">Home</a></li>
+        <li><a href="/doctor">Doctor profile</a></li>
+        <li><a href="/search_patient">Search patient</a></li>
+         <li><a href="/appReq/${doc.d_id}">Appointment list</a></li>
+         <li><a href="/doc_appt_requests/${doc.d_id} ">Appointment History</a></li>
+        <li><a href="/home">Logout</a></li>
         
       </ul>
+      
+      
     </div>
   </div>
 <div class ="patient">

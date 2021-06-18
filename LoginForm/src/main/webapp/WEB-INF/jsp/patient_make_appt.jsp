@@ -254,7 +254,6 @@ img {
     border: none;
     border-collapse: collapse;
     width: 70%;
-  
     white-space: nowrap;
     background-color: white;
 }
@@ -356,12 +355,7 @@ img {
 </style>
 </head>
 <body>
-	<script type="text/javascript">
-		function logout() {
-			sessionStorage.clear();
-			window.location.href = "/";
-		}
-	</script>
+	
 	<div class="page">
   <header tabindex="0"><h2>Patient</h2></header>
   <div id="nav-container">
@@ -373,11 +367,11 @@ img {
     </div>
     <div id="nav-content" tabindex="0">
       <ul>
-        <li><a href="patientHome">Home</a></li>
-        <li><a href="pat_prof">Patient profile</a></li>
-        <li><a href="patient_history">Medication history</a></li>
-        <li><a href="patient_make_appt">Appointment booking</a></li>
-        <li><a href="#0">Logout</a></li>
+        <li><a href="/patientHome">Home</a></li>
+        <li><a href="/pat_prof">Patient profile</a></li>
+        <li><a href="/appointmentHistoryPat/${pat.p_id}">Medication history</a></li>
+        <li><a href="/patient_make_appt">Appointment booking</a></li>
+        <li><a href="/home">Logout</a></li>
         
       </ul>
     </div>

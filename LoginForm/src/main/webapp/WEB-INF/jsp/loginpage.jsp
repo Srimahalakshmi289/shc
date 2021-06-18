@@ -11,6 +11,8 @@ body{
 	line-height: 1.7;
 	color: #c4c3ca;
 	overflow-x: hidden;
+	background-image: url(/resources/images/one.jpg);
+	background-size:cover; 
 }
 a {
 	cursor: pointer;
@@ -362,7 +364,7 @@ position: absolute;
 												<i class="input-icon uil uil-user"></i>
 											</div>	
 											<div class="form-group" style="padding: 5px;">
-												<input type="text" name="p_email" class="form-style" placeholder="Your Email Id" id="p_email" autocomplete="off">
+												<input type="text" name="pEmail" class="form-style" placeholder="Your Email Id" id="pEmail" autocomplete="off">
 												<i class="input-icon uil uil-user"></i>
 											</div>	
 											<div class="form-group" style="padding: 5px;">

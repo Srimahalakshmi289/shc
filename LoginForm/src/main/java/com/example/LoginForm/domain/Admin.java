@@ -25,9 +25,7 @@ public class Admin {
 	private String role;
 	@Column(name="query")
 	private String query;
-	@Column(name="status")
-	private String status;
-	
+
 	
 	
 	public Admin() {

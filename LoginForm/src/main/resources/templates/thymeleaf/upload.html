@@ -1,14 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    
-
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>admin home</title>
+<title>Upload Reports</title>
 </head>
 <style>
+.list{
+font-weight:400;
+padding-top: 100px;
+    padding-left: 400px;
+	padding-top: 120px;
+}
 @import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:400,600');
 
 * {
@@ -22,14 +24,13 @@ strong {
 .page {
   width: 100%;
   height: 100vh;
-  background: #fdfdfd;
+ background: url(resources/images/medical.jpg);
+  background-size: 1800px 900px;
+  background-repeat:no-repeat;
   font-family:sans-serif; 
   font-weight: 600;
   letter-spacing: .06em;
   color: #212121;
-  background: url(resources/images/adminHome.jpg);
-  background-size: 1800px 900px;
-  background-repeat:no-repeat;
 }
 
 
@@ -38,13 +39,39 @@ header {
   position: fixed;
   width: 100%;
   height: 70px;
-  background: black;
+  background:#875de5;
   color: #fff;
   justify-content: center;
   align-items: center;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
+main {
+  padding: 70px 20px 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+main > div {
+  margin: auto;
+  max-width: 600px;
+}
+
+main h2 span {
+  color: #BF7497;
+}
+
+main p {
+  line-height: 1.5;
+  font-weight: 200;
+  margin: 20px 0;
+}
+
+main small {
+  font-weight: 300;
+  color: #888;
+}
 
 #nav-container {
   position: fixed;
@@ -194,10 +221,24 @@ a {
   transition: .2s ease-in-out;
 }
 
+h3 {
+  padding:30px;
+}
+h1{
+font-family:monospace;
+padding-top:200px;
+padding-left:700px;
+}
+ul {
+  padding: 0;
+  list-style: none;
+}
+
 </style>
 <body>
 <div class="page">
-  <header tabindex="0"><h2>Admin</h2></header>
+  <header tabindex="0"><h2>Doctor</h2></header>
+ 
   <div id="nav-container">
     <div class="bg"></div>
     <div class="button" tabindex="0">
@@ -207,19 +248,40 @@ a {
     </div>
     <div id="nav-content" tabindex="0">
       <ul>
-        <li><a href="/adminHome">Home</a></li>
-        <li><a href="/add_doctors">Add doctor</a></li>
-        <li><a href="/doctor_list">Doctor list</a></li>
-        <li><a href="/querylist">Query list</a></li>
+        <li><a href="/doctorHome">Home</a></li>
+        <li><a href="/doctor">Doctor profile</a></li>
+        <li><a href="/search_patient">Search patient</a></li>
+         <li><a href="/appReq/${doc.d_id}">Appointment list</a></li>
+         <li><a href="/doc_appt_requests/${doc.d_id} ">Appointment History</a></li>
         <li><a href="/home">Logout</a></li>
         
       </ul>
+      
+      
     </div>
   </div>
+		<div class="list">
+			<h3>List of Documents uploaded</h3>
+				<table class="tab" border="1">
+					<thead>
+						<tr>
+							<th>Reports Id</th>
+							<th>Reports Name</th>
+							<th>Download Link</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="doc:${docs}">
+							<td th:text="${doc.id}" />
+							<td th:text="${doc.docName}" />
+							<td><a th:href="@{'/downloadFile/'+${doc.id}}">Download
+									Here</a></td>
 
-  <main>
-    
-  </main>
-</div>
+
+						</tr>
+					</tbody>
+				</table>
+		</div>
+	</div>
 </body>
 </html>

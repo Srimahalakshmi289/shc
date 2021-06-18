@@ -18,12 +18,6 @@
   outline: none;
 }
 
-.head{
-text-align: center;
-padding:10px;
-background: purple;
-color:white;
-}
 strong {
   font-weight: 600;
 }
@@ -31,13 +25,29 @@ strong {
 .page {
   width: 100%;
   height: 100vh;
-  background: url(resources/images/add_doc.png);
-  background-size: 1800px 900px;
+  background: #fdfdfd;
   font-family:sans-serif; 
   font-weight: 600;
   letter-spacing: .06em;
   color: #212121;
+  background: url(resources/images/adminHome.jpg);
+  background-size: 1800px 900px;
+  background-repeat:no-repeat;
 }
+
+
+header {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  background: black;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
 
 #nav-container {
   position: fixed;
@@ -72,14 +82,13 @@ strong {
   z-index: 1;
   -webkit-appearance: none;
   border: 0;
-  background: purple;
+  background: transparent;
   border-radius: 0;
   height: 70px;
   width: 30px;
   cursor: pointer;
   pointer-events: auto;
   margin-left: 25px;
- margin-top:2px;
   touch-action: manipulation;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
@@ -170,9 +179,8 @@ strong {
   padding: 0;
 }
 
-.body {
+html, body {
   height: 100%;
-  background:#c4afe0;
 }
 
 a,
@@ -211,14 +219,12 @@ label {
     margin-left: 10px;
     margin-right: 10px
 }	
+.head{
+text-align: center;
+padding-top:15px;
+}
 </style>
 </head>
- <script type="text/javascript">
-function logout(){
-	sessionStorage.clear();
-	window.location.href="/";
-	 }
-</script>
 <body>
 <form action="add_doctors" method="post" modelAttribute="doctor">
     <div class="page">
@@ -232,17 +238,17 @@ function logout(){
     </div>
     <div id="nav-content" tabindex="0">
       <ul>
-        <li><a href="adminHome">Home</a></li>
-        <li><a href="add_doctors">Add doctor</a></li>
-        <li><a href="doctor_list">Doctor list</a></li>
-        <li><a href="querylist">Query list</a></li>
-        <li><a href="home">Logout</a></li>
+        <li><a href="/adminHome">Home</a></li>
+        <li><a href="/add_doctors">Add doctor</a></li>
+        <li><a href="/doctor_list">Doctor list</a></li>
+        <li><a href="/querylist">Query list</a></li>
+        <li><a href="/home">Logout</a></li>
         
       </ul>
     </div>
   </div>
 	<div class="head">
-	<h1>Add Doctors</h1>
+	<h2>Add Doctors</h2>
 	</div>
 	<div class="container"> <div class=" text-center mt-5 ">
         
@@ -264,7 +270,7 @@ function logout(){
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <div class="form-group"> <label for="form_email">Email</label> <input id="form_email" type="email" name="d_email" class="form-control" required="required" data-error="Valid email is required."> </div>
+                                        <div class="form-group"> <label for="form_email">Email</label> <input id="form_email" type="email" name="dEmail" class="form-control" required="required" data-error="Valid email is required."> </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group"> <label for="form_bg">Blood Group</label> <select id="form_bg" name="d_bg" class="form-control" required="required" data-error="bloodgroup is required.">

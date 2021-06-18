@@ -12,7 +12,7 @@
 	crossorigin="anonymous">
 <style>
 body {
-	background: url(/resources/images/patients.jpg);
+	background: url(/resources/images/app.jpg);
 	background-size: cover;
 }
 
@@ -29,9 +29,7 @@ h1 {
 	border-radius: 10px;
 }
 
-.form-label {
-	color: white;
-}
+
 
 nav {
 	color: black;

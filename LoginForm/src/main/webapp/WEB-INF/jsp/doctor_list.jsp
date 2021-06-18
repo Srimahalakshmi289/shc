@@ -325,6 +325,7 @@ function logout(){
 	 }
 </script>
 <body>
+<form action="doctor_list" method="post">
     <div class="page">
   <header tabindex="0"><h2>Admin</h2></header>
   <div id="nav-container">
@@ -336,17 +337,17 @@ function logout(){
     </div>
     <div id="nav-content" tabindex="0">
       <ul>
-        <li><a href="adminHome">Home</a></li>
-        <li><a href="add_doctors">Add doctor</a></li>
-        <li><a href="doctor_list">Doctor list</a></li>
-        <li><a href="querylist">Query list</a></li>
-        <li><a href="home">Logout</a></li>
+        <li><a href="/adminHome">Home</a></li>
+        <li><a href="/add_doctors">Add doctor</a></li>
+        <li><a href="/doctor_list">Doctor list</a></li>
+        <li><a href="/querylist">Query list</a></li>
+        <li><a href="/home">Logout</a></li>
         
       </ul>
     </div>
   </div>
   <div>  
-<h2 align="center"><font><strong>Doctor's List</strong></font></h2>
+<h2 align="center" style="padding-top:100px";><font><strong>Doctor's List</strong></font></h2>
 <div class="table-wrapper">
 <table class="fl-table">
 
@@ -375,7 +376,7 @@ function logout(){
 						<td>${doctor.d_name}</td>
 						<td>${doctor.password}</td>
 						<td>${doctor.d_bg}</td>
-						<td>${doctor.d_email}</td>
+						<td>${doctor.dEmail}</td>
 						<td>${doctor.d_city}</td>
 						<td>${doctor.d_phonenum}</td>
 						<td>${doctor.department}</td>
@@ -391,6 +392,7 @@ function logout(){
 </div>
 </div>
 </div>
+</form>
 </body>
 
  

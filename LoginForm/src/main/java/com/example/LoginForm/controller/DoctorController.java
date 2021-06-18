@@ -143,6 +143,16 @@ public class DoctorController {
 		System.out.println(appList);
 		return "appointmenthistory";
 	}
+	@RequestMapping("/viewPres/{apid}")
+	public String viewPres(@PathVariable(value = "apid") int apid, ModelMap map) {
+		List<Prescription> presHist = presrepo.findByAid(apid);
+		if (presHist.isEmpty()) {
+			map.addAttribute("msg", " Your medicine has not Prescribed ..!");
+			return "preshist";
+		}
+		map.put("presHist", presHist);
+		return "preshist";
+	}
 	
 
 }

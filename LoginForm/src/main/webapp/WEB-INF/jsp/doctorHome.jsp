@@ -219,10 +219,14 @@ a {
   transition: .2s ease-in-out;
 }
 
-h1, h2, h3, h4 {
+h2, h3, h4 {
   margin: 0;
 }
-
+h1{
+font-family:monospace;
+padding-top:200px;
+padding-left:700px;
+}
 ul {
   padding: 0;
   list-style: none;
@@ -242,19 +246,22 @@ ul {
     </div>
     <div id="nav-content" tabindex="0">
       <ul>
-        <li><a href="doctorHome">Home</a></li>
-        <li><a href="doctor">Doctor profile</a></li>
-        <li><a href="search_patient">Search patient</a></li>
-         <li><a href="appReq/${doc.d_id}">Appointment list</a></li>
-         <li><a href="doc_appt_requests/${doc.d_id} ">Appointment History</a></li>
-        <li><a href="home">Logout</a></li>
+        <li><a href="/doctorHome">Home</a></li>
+        <li><a href="/doctor">Doctor profile</a></li>
+        <li><a href="/search_patient">Search patient</a></li>
+         <li><a href="/appReq/${doc.d_id}">Appointment list</a></li>
+         <li><a href="/doc_appt_requests/${doc.d_id} ">Appointment History</a></li>
+        <li><a href="/home">Logout</a></li>
         
       </ul>
       
       
     </div>
   </div>
-  
+  <div>
+  <h1>Hello.. ${doc.d_name}<br>
+  have a nice day</h1>
+  </div>
 
 </div>
 </body>
