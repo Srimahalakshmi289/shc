@@ -1,0 +1,1 @@
+insert into login_credentials(email,password,role) values ('menaga@gmail.com','menaga@123','patient');
